@@ -1,0 +1,10 @@
+{
+  "databaseChangeLog": [
+    {
+      "include": {
+        "file": "changelogs/2020-11-15--001-create-device.sql",
+        "relativeToChangelogFile": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+server:
+  port: 8085
+
+spring:
+  main:
+    banner-mode: off
+
+  datasource:
+    initialization-mode: never
+    url: ###
+    username: ###
+    password: ###
+
+  jpa:
+    generate-ddl: false
+
+    hibernate:
+      ddl-auto: none
+
+    open-in-view: false
+
+  liquibase:
+    change-log: classpath:/db/changelog-master.json
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: ###
+    port: ###
+    username: ###
+    password: ###
+    default-encoding: UTF-8
+
+logging:
+  file:
+    name: /data/uploads/logs/backend.log
