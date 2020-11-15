@@ -251,6 +251,7 @@ create table device_available_reports
     device_id    integer
         constraint device_available_reports_device_id_pkey
             references devices,
+    used_url   varchar(255),
     created_at   timestamp default now(),
     is_available boolean
 );
@@ -263,6 +264,7 @@ create table device_page_count_reports
     device_id  integer
         constraint device_page_count_reports_device_id_pkey
             references devices,
+    used_url   varchar(255),
     created_at timestamp default now(),
     page_count integer
 );

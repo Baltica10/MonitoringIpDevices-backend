@@ -37,3 +37,7 @@ spring:
 logging:
   file:
     name: /data/uploads/logs/backend.log
+
+cron:
+  check-devices: '0 0/5 * * * *'
+  page-count: '0 0 0/4 * * *'

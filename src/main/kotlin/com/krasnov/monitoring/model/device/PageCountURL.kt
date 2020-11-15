@@ -4,11 +4,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "page_count_url")
-class PageCountURL(
+data class PageCountURL(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
+        val id: Int? = null,
 
         val value: String,
 

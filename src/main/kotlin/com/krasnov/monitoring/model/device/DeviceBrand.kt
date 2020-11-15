@@ -4,11 +4,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "device_brands")
-class DeviceBrand(
+data class DeviceBrand(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
+        val id: Int? = null,
 
         val name: String,
 

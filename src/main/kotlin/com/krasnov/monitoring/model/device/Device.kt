@@ -1,16 +1,15 @@
 package com.krasnov.monitoring.model.device
 
-import com.krasnov.monitoring.model.reports.DevicePageCountReport
-import com.krasnov.monitoring.model.reports.DeviceAvailableReport
+import com.krasnov.monitoring.model.reports.*
 import javax.persistence.*
 
 @Entity
 @Table(name = "devices")
-class Device(
+data class Device(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
+        val id: Int? = null,
 
         @ManyToOne
         @JoinColumn(name = "type_id")
@@ -56,4 +55,14 @@ class Device(
                 orphanRemoval = true,
                 fetch = FetchType.LAZY)
         var pageCounts: Set<DevicePageCountReport>?
-)
+) {
+    fun getCheckAvailableURL(): String {
+        return this.settings?.protocol?.value +
+                this.settings?.host
+    }
+
+    fun getPageCountURL(): String {
+        return this.settings?.protocol?.value +
+                this.settings?.host
+    }
+}

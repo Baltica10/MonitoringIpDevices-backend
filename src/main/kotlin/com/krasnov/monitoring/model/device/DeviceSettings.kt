@@ -4,11 +4,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "device_settings")
-class DeviceSettings(
+data class DeviceSettings(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
+        val id: Int? = null,
 
         @ManyToOne
         @JoinColumn(name = "protocol_id")

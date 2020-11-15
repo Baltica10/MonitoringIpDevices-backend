@@ -4,11 +4,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "protocols")
-class Protocol(
+data class Protocol(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
+        val id: Int? = null,
 
         val value: String
 )
