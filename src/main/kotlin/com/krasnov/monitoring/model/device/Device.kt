@@ -1,5 +1,7 @@
 package com.krasnov.monitoring.model.device
 
+import com.krasnov.monitoring.model.reports.DevicePageCountReport
+import com.krasnov.monitoring.model.reports.DeviceAvailableReport
 import javax.persistence.*
 
 @Entity
@@ -41,6 +43,17 @@ class Device(
         val notifyTlg: Boolean,
 
         @Column(name = "notify_email")
-        val notifyEmail: Boolean
+        val notifyEmail: Boolean,
 
+        @OneToMany(mappedBy = "device",
+                cascade = [CascadeType.ALL],
+                orphanRemoval = true,
+                fetch = FetchType.LAZY)
+        var availableReports: Set<DeviceAvailableReport>?,
+
+        @OneToMany(mappedBy = "device",
+                cascade = [CascadeType.ALL],
+                orphanRemoval = true,
+                fetch = FetchType.LAZY)
+        var pageCounts: Set<DevicePageCountReport>?
 )

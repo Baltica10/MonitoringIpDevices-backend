@@ -2,6 +2,8 @@
 
 --changeset an.krasnov:1
 
+DROP TABLE IF EXISTS device_page_count_reports;
+DROP TABLE IF EXISTS device_available_reports;
 DROP TABLE IF EXISTS devices;
 DROP TABLE IF EXISTS device_settings;
 DROP TABLE IF EXISTS protocols;
@@ -174,7 +176,7 @@ create table devices
     check_available boolean default true,
     check_page_count boolean default false,
     notify_tlg boolean default false,
-    notify_email boolean default false
+    notify_email boolean default true
 );
 INSERT INTO devices(id, type_id, brand_id, check_page_count, model, serial_number, description, image, settings_id)
 VALUES (1, 1, 1, true, 'M1536dnf', 'CNG8G184WR', 'Сервис менеджеры', 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c02944267.png', 1),
@@ -236,3 +238,31 @@ VALUES (1, 1, 1, true, 'M1536dnf', 'CNG8G184WR', 'Сервис менеджер�
        (54, 7, 9, false, 'Купольная камера', 'b/n', 'Въезд в сервис', 'https://www.itech-cctv.ru/upload/resize_cache/iblock/283/200_200_0/picture_small_n0000042438_ipe_dp-small.jpg', 54),
        (55, 7, 9, false, 'Купольная камера', 'b/n', 'Инженеры', 'https://www.itech-cctv.ru/upload/resize_cache/iblock/283/200_200_0/picture_small_n0000042438_ipe_dp-small.jpg', 55)
        ;
+
+UPDATE devices
+SET notify_tlg = true
+WHERE type_id = 7;
+
+create table device_available_reports
+(
+    id           serial not null
+        constraint device_available_reports_pkey
+            primary key,
+    device_id    integer
+        constraint device_available_reports_device_id_pkey
+            references devices,
+    created_at   timestamp default now(),
+    is_available boolean
+);
+
+create table device_page_count_reports
+(
+    id         serial not null
+        constraint device_page_count_reports_pkey
+            primary key,
+    device_id  integer
+        constraint device_page_count_reports_device_id_pkey
+            references devices,
+    created_at timestamp default now(),
+    page_count integer
+);
