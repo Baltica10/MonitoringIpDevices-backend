@@ -25,7 +25,22 @@ class Device(
 
         val description: String?,
 
-        @ManyToOne
+        val image: String,
+
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "settings_id")
-        val settings: DeviceSettings?
+        val settings: DeviceSettings?,
+
+        @Column(name = "check_available")
+        val checkAvailable: Boolean,
+
+        @Column(name = "check_page_count")
+        val checkPageCount: Boolean,
+
+        @Column(name = "notify_tlg")
+        val notifyTlg: Boolean,
+
+        @Column(name = "notify_email")
+        val notifyEmail: Boolean
+
 )
