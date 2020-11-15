@@ -63,6 +63,7 @@ data class Device(
 
     fun getPageCountURL(): String {
         return this.settings?.protocol?.value +
-                this.settings?.host
+                this.settings?.host +
+                this.settings?.pageCountURL?.value
     }
 }

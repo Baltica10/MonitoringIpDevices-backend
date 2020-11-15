@@ -40,4 +40,4 @@ logging:
 
 cron:
   check-devices: '0 0/5 * * * *'
-  page-count: '0 0 0/4 * * *'
+  page-count: '0 0 0/3 * * *'
