@@ -13,4 +13,5 @@
   * docker-compose -f local.yml down
   
 #### Start a new version: 
+  * docker-compose -f local.yml down || true
   * export UID && export GID && docker-compose -f local.yml up --build -d

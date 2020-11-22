@@ -28,11 +28,12 @@ spring:
       max-request-size: 10MB
 
   mail:
-    host: ###
-    port: ###
+    host: smtp.yandex.com
+    port: 465
     username: ###
     password: ###
     default-encoding: UTF-8
+    protocol: smtps
 
 logging:
   file:

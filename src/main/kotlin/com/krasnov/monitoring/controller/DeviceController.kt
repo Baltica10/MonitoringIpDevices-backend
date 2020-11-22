@@ -7,7 +7,7 @@ import com.krasnov.monitoring.util.ApiPath.Companion.ID
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@RestController()
+@RestController
 @RequestMapping(API_V1 + DEVICE)
 class DeviceController(
         private val service: DeviceService

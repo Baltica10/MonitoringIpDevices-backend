@@ -14,7 +14,7 @@ import java.time.Duration
 
 @Service
 class DeviceServiceImpl(
-        private val deviceRepository: DeviceRepository
+        private val deviceRepository: DeviceRepository,
 ) : DeviceService {
 
     override fun checkDeviceStatus(deviceId: Int): Boolean {
