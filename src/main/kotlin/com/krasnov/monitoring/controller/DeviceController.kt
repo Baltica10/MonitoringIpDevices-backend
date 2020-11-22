@@ -1,6 +1,6 @@
 package com.krasnov.monitoring.controller
 
-import com.krasnov.monitoring.service.DeviceService
+import com.krasnov.monitoring.service.device.DeviceService
 import com.krasnov.monitoring.util.ApiPath.Companion.API_V1
 import com.krasnov.monitoring.util.ApiPath.Companion.DEVICE
 import com.krasnov.monitoring.util.ApiPath.Companion.ID

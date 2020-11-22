@@ -2,7 +2,8 @@ package com.krasnov.monitoring.job
 
 import com.krasnov.monitoring.repository.device.DeviceRepository
 import com.krasnov.monitoring.repository.reports.*
-import com.krasnov.monitoring.service.*
+import com.krasnov.monitoring.service.device.DeviceService
+import com.krasnov.monitoring.service.notification.NotificationService
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.util.stream.Collectors

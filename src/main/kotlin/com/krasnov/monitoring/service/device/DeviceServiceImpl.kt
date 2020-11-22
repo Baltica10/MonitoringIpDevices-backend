@@ -1,4 +1,4 @@
-package com.krasnov.monitoring.service
+package com.krasnov.monitoring.service.device
 
 import com.krasnov.monitoring.exception.EntityNotFoundException
 import com.krasnov.monitoring.model.device.Device

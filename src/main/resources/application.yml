@@ -42,3 +42,8 @@ logging:
 cron:
   check-devices: '0 0/5 * * * *'
   page-count: '0 0 0/3 * * *'
+
+tlg:
+  token: ###
+  user-name: ###
+  chat-id: ###
